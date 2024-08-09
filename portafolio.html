@@ -17,12 +17,13 @@
 
         /* Estilo para el contenedor general */
         .container {
-            height: 100vh; /* Cada sección ocupa toda la pantalla */
+            min-height: 100vh; /* Cada sección ocupa toda la pantalla */
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
+            padding: 20px;
             transition: background-color 0.5s ease;
         }
 
@@ -55,10 +56,11 @@
             margin: 0;
             display: flex;
             justify-content: center;
+            flex-wrap: wrap;
         }
 
         nav ul li {
-            margin: 0 15px;
+            margin: 0 10px;
         }
 
         nav ul li a {
@@ -79,31 +81,30 @@
         }
 
         #inicio h1 {
-            font-size: 3em;
+            font-size: 2.5em;
             margin: 0;
         }
 
         /* Estilo para las secciones */
         section {
             width: 100%;
-            padding: 60px 20px;
+            padding: 40px 20px;
             transition: transform 0.3s ease;
         }
 
         section:hover {
-            transform: scale(1.05); /* Escala al pasar el ratón */
+            transform: scale(1.02); /* Escala al pasar el ratón */
         }
 
         /* Sección de proyectos */
         #proyectos {
             background-color: #1f1f1f; /* Fondo negro suave */
-            padding: 20px;
         }
 
         .project-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); /* Tamaño de los cuadrados más pequeño */
-            gap: 15px; /* Espacio entre los cuadrados */
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Ajusta el tamaño de las tarjetas */
+            gap: 10px; /* Espacio entre las tarjetas */
             justify-items: center;
             max-width: 1000px; /* Máxima anchura para limitar la extensión */
             margin: 0 auto; /* Centra la cuadrícula */
@@ -114,9 +115,9 @@
             color: #fff;
             border: 2px solid #0f0; /* Borde verde fluorescente */
             border-radius: 8px;
-            padding: 15px;
-            width: 120px; /* Tamaño reducido */
-            height: 120px; /* Tamaño reducido */
+            padding: 10px;
+            width: 150px; /* Tamaño de las tarjetas ajustado */
+            height: 150px; /* Tamaño de las tarjetas ajustado */
             display: flex;
             align-items: center;
             justify-content: center;
@@ -130,28 +131,29 @@
             transform: scale(1.05); /* Efecto de aumento */
         }
 
-        /* Sección de habilidades */
-        #habilidades {
+        /* Sección de habilidades y contacto */
+        #habilidades, #contacto {
             background-color: #1a1a1a; /* Fondo negro suave */
-            padding: 20px;
         }
 
-        #habilidades:hover {
-            background-color: #1a1a1a; /* Fondo negro sin cambio */
-            color: #0f0; /* Mantener color de texto verde fluorescente */
+        /* Pie de página */
+        footer {
+            background-color: #1a1a1a;
+            color: #0f0;
+            text-align: center;
+            padding: 10px;
+            border-top: 2px solid #0f0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            z-index: 1000;
         }
 
-        /* Sección de contacto */
-        #contacto {
-            background-color: #1a1a1a; /* Fondo negro suave */
-            padding: 20px;
+        footer p {
+            margin: 0;
         }
 
-        #contacto:hover {
-            background-color: #1a1a1a; /* Fondo negro sin cambio */
-            color: #0f0; /* Mantener color de texto verde fluorescente */
-        }
-
+        /* Detalles del proyecto */
         .project-details {
             display: none;
             position: fixed;
@@ -164,7 +166,7 @@
             border-radius: 8px;
             padding: 20px;
             width: 80%;
-            max-width: 600px;
+            max-width: 500px;
             z-index: 1000;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
             text-align: left;
@@ -189,20 +191,60 @@
             background-color: #0a0; /* Verde fluorescente más oscuro */
         }
 
-        footer {
-            background-color: #1a1a1a;
-            color: #0f0;
-            text-align: center;
-            padding: 20px;
-            border-top: 2px solid #0f0;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-            z-index: 1000;
+        /* Media Queries para dispositivos móviles */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.2em;
+            }
+
+            nav ul li {
+                margin: 0 5px;
+            }
+
+            nav ul li a {
+                font-size: 0.9em;
+            }
+
+            #inicio h1 {
+                font-size: 2em;
+            }
+
+            .project-card {
+                width: 120px; /* Tamaño reducido para pantallas pequeñas */
+                height: 120px; /* Tamaño reducido para pantallas pequeñas */
+            }
+
+            section {
+                padding: 20px 10px;
+            }
         }
 
-        footer p {
-            margin: 0;
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 1em;
+            }
+
+            nav ul li {
+                margin: 0 2px;
+            }
+
+            nav ul li a {
+                font-size: 0.8em;
+            }
+
+            #inicio h1 {
+                font-size: 1.5em;
+            }
+
+            .project-card {
+                width: 100px; /* Tamaño más reducido para pantallas muy pequeñas */
+                height: 100px; /* Tamaño más reducido para pantallas muy pequeñas */
+            }
+
+            .project-details {
+                width: 90%;
+                max-width: 400px;
+            }
         }
     </style>
 </head>
@@ -292,10 +334,3 @@
     </script>
 </body>
 </html>
-
-
-
-
-
-
-
